@@ -73,15 +73,15 @@ class Renderer
             glScalef((float)scale / 10, (float)scale / 10, (float)scale / 10);
             glBegin(GL_LINES);
             int i;
-                for(i=0; i<Acoperire.size(); i++)
+                for(i=0; i<Acoperire.size()-1; i++)
                 {
                     glVertex3f(Acoperire[i].get_x(), Acoperire[i].get_y(), 0.0);
                     glVertex3f(Acoperire[i+1].get_x(), Acoperire[i+1].get_y(), 0.0);
                 }
 
                 // si legam si ultimul punct de primul la final
-                glVertex3f(Acoperire[i].get_x(), Acoperire[i].get_y(), 0.0);
-                glVertex3f(Acoperire[0].get_x(), Acoperire[0].get_y(), 0.0);
+                glVertex3f(Acoperire[i].get_x(), Acoperire[i].get_y(), 0.0f);
+                glVertex3f(Acoperire[0].get_x(), Acoperire[0].get_y(), 0.0f);
             glEnd();
             glFlush();
         }
